@@ -39,6 +39,7 @@ input {
 
 ::placeholder {
   color: var(--lg) !important;
+  font-size: 14px;
 }
 
 .jumbotron {
