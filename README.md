@@ -1,7 +1,5 @@
 # **Day Scheduler**
-<br>
 You can find the [day scheduler here](https://vjeuel.github.io/work_day_scheduler/).
-
 <br>
 In this app you can type your daily activities and it will be saved on local storage, so even if you refresh the page you are not losing the typed information.
 
