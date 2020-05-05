@@ -8,25 +8,29 @@
 
 body {
   background-color:var(--bg);
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Nunito Sans', sans-serif !important;
   font-size: 16px;
   line-height: 1;
 }
 
-h1,p {
+h1 {
+  font-family: 'Nunito Sans', sans-serif !important;
+  color: #f2f2f2;
+  font-weight: 800 !important;
+}
+
+p {
   color: var(--lg);
 }
 
-textarea{
+textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
+  color: var(--bg);
+  /* border-left: 1px solid black; */
   padding: 10px;
 }
-
-
 
 input { 
   border: none;
@@ -82,25 +86,25 @@ input {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #D4D2DF;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #F7A8A4;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #BCD9B4;
   color: white;
 }
 
 .saveBtn {
-  width: 100%;
+  width: 48px;
   height: 48px;
   /* border-left: 1px solid black; */
-  border-radius: 5px;
+  border-radius: 50%;
   background-color: var(--pr);
   color: white;
   justify-self: center;
@@ -108,10 +112,11 @@ input {
   box-shadow: 0 0 20px 4px var(--pr);
 }
 
-.saveBtn i:hover {
+.saveBtn:hover {
   color: var(--bg);
   background-color: var(lg);
   font-size: 20px;
   transition: all .3s ease-in-out;
+  border-radius: 5px;
 }
 
