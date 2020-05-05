@@ -16,17 +16,22 @@ $(document).ready(function () {
       if (hourArr[index] === undefined) {
          return false;
       }
+
+      function getItemFrom(index) {
+         if (localStorage.getItem(index)) {
+            return localStorage.getItem(index)
+         } else {
+            return 'what now?'
+         }
+      }
+
       containerCl.append('<section class="row">\
       <div class="col-2 hour">' + timeArr[index] + '</div>\
-      <div class="col-9 time-block">\
-      <input id="input-data" class="input-task form-control form-control-lg" data-hour="' + hourArr[index] + '" placeholder="what now?"/></div>\
-                     <div class="col-1"><button id="' + hourArr[index] + '" class="btn saveBtn save-task" type="button"><i class="fas fa-save"></i></button></div></section>');
-   });
+      <div class="col-10 time-block">\
+      <input value="' + getItemFrom(hourArr[index]) + '" id="input-data" name="schedule" class="input-task form-control form-control-lg" data-hour="' + hourArr[index] + '" placeholder="what now?"/>\
+      <button id="' + hourArr[index] + '" class="btn saveBtn save-task" type="button"><i class="fas fa-save"></i></button></div></section>');
    
-   time = 14;
-   console.log("Current Time: " + time);
-
-
+   });
 
    // colorChange
    function colorChange() {
@@ -41,22 +46,28 @@ $(document).ready(function () {
          } else {
             $(this).addClass("present");
          }
-         console.log(time);
       });
    }
    colorChange();
+
+
+
+   $("button").on("click", function () {
+      var buttonClick = this.id //parseInt($(this).id);
+      var textAreaValue = $(this).siblings('.input-task').val()
+      localStorage.setItem(buttonClick, textAreaValue)
+      
+      console.log(textAreaValue);
+      
+      console.log(buttonClick);
+      
+
+
+
    
-   var todo = localStorage.getItem($("input"));
-
-   $("button").on("click", function (e) {
-
-      localStorage.setItem("eat","lunch");
    });
 
 
-
-
-
-
-                  
+   
+   
 });

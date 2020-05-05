@@ -62,6 +62,8 @@ input {
 .time-block{
   text-align: center;
   border-radius: 15px;
+  display: grid;
+  grid-template-columns: 80% 20%;
 }
 
 .row {
